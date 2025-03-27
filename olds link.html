@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой сайт</title>
+    <style>
+        /* Общие стили */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        /* Шапка */
+        header {
+            background-color: #ffffff; /* Белый фон, как у S7 */
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Логотип */
+        .logo img {
+            height: 40px; /* Высота логотипа */
+        }
+
+        /* Кнопка "Выйти" */
+        .logout-button a {
+            color: #ABC80B; /* Зелёный цвет, как у S7 */
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 16px;
+            border: 2px solid #ABC80B;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .logout-button a:hover {
+            background-color: #ABC80B;
+            color: white;
+        }
+
+        /* Основной контент */
+        main {
+            padding: 40px 20px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #ABC80B; /* Зелёный цвет, как у S7 */
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* Секция с услугами (как на S7) */
+        .services {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            text-align: center;
+        }
+
+        .service-card1 {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            text-align: center;
+        }
+
+        .service-card h3 {
+            color: #ABC80B; /* Зелёный цвет, как у S7 */
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 1em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <!-- Логотип -->
+        <div class="logo">
+            <img src="logo.png" alt="Логотип"> <!-- Укажите путь к вашему логотипу -->
+        </div>
+
+        <!-- Кнопка "Выйти" -->
+        <div class="logout-button">
+            <a href="index.html">Выйти</a> <!-- Замените "login.html" на путь к вашей форме входа -->
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main>
+        <h1>Добро пожаловать на борт!</h1>
+        <p>Тут есть все старые версии сайтов, удачи!</p>
+
+        <!-- Секция с услугами -->
+        <div class="services">
+            <div class="service-card1">
+                <a href="old versions/old special.html">special.html</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

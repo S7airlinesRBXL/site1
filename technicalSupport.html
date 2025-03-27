@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Техническая поддержка</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            background-image: url('background.jpg'); /* Путь к вашему фоновому изображению */
+            background-size: cover; /* Растягиваем изображение на весь экран */
+            background-position: center; /* Центрируем изображение */
+            background-repeat: no-repeat; /* Запрещаем повторение изображения */
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .support-info {
+            margin-top: 20px;
+        }
+        .support-info p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+        .support-info a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .support-info a:hover {
+            text-decoration: underline;
+        }
+        .contact-form {
+            margin-top: 30px;
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .contact-form button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .contact-form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Техническая поддержка</h1>
+    
+    <div class="support-info">
+        <p>Если у вас возникли вопросы или проблемы, пожалуйста, свяжитесь с нашей службой поддержки. Мы готовы помочь вам!</p>
+        <p>Вы можете связаться с нами по телефону: <a href="tel:+79142894588">+7 (914) 289 45-88</a></p>
+        <p>Или напишите нам на email: <a href="mailto:helps7rblx@gmail.com">helps7rblx@gmail.com</a></p>
+    </div>
+
+    <div class="contact-form">
+        <h2>Форма обратной связи</h2>
+        <h4>Не работает, пожалуйста не пытайтесь нам отправить сообщение через эту форму, но мы пытаемся эту функцию включить!</h4>
+        <form action="#" method="post">
+            <label for="name">Ваше имя:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Ваш email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Сообщение:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Скачать файлы</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .download-section {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .download-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .download-item:last-child {
+            border-bottom: none;
+        }
+        .download-btn {
+            background-color: #3498db;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .download-btn:hover {
+            background-color: #2980b9;
+        }
+        .file-info {
+            flex-grow: 1;
+        }
+        .file-size {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Скачать файлы</h1>
+    
+    <div class="download-section">
+        <h2>Документы</h2>
+        <div class="download-item">
+            <div class="file-info">
+                <h3>Ваша маршрутная квитанция</h3>
+                <p class="file-description">Маршрутная квитанция а/к "Сияние"</p>
+                <p class="file-size">PDF, 35 КБ</p>
+            </div>
+            <a href="files/Сияние маршрутная квитанция.pdf" class="download-btn" download>Скачать</a>
+        </div>
+    </div>
+    <footer style="text-align: center; margin-top: 30px; color: #7f8c8d;">
+        <p>Если у вас возникли проблемы со скачиванием, пожалуйста, свяжитесь с нами.</p>
+    </footer>
+</body>
+</html>

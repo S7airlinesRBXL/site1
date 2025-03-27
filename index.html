@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма входа</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <img src="logo.png" alt="Логотип">
+        <h2>Вход</h2>
+        <h5>За регистрацией на сайте обращайтесь сюда: <a href="https://t.me/S7helpRBLXbot">@S7helpRBLXbot</a></h5>
+        <form id="loginForm">
+            <label for="username">Имя пользователя:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Войти</button>
+
+            <p>Есть проблемы? <a href="technicalSupport.html">Напишите нам!</a></p>
+        </form>
+        <p id="message"></p>
+        <noscript>Для работы с формой включите JavaScript в вашем браузере.</noscript>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

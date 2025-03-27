@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('background.jpg'); /* Путь к вашему фоновому изображению */
+    background-size: cover; /* Растягиваем изображение на весь экран */
+    background-position: center; /* Центрируем изображение */
+    background-repeat: no-repeat; /* Запрещаем повторение изображения */
+}
+
+/*
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+*/
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Белый цвет с небольшой прозрачностью */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    z-index: 1; /* Помещаем контейнер над затемнением */
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#message {
+    text-align: center;
+    margin-top: 10px;
+    color: red;
+    font-size: 14px;
+}
+
+/*special.html*/
+
+.special-container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.special-container h2 {
+    color: #ff5722; /* Оранжевый цвет для выделения */
+}
+
+.special-container a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.special-container a:hover {
+    text-decoration: underline;
+}
