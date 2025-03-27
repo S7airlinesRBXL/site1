@@ -48,3 +48,11 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         document.getElementById('message').style.color = "red";
     }
 });
+
+// Если используешь export:
+export function test() {
+    console.log("Модуль работает!");
+}
+
+// Или просто код без export:
+console.log("Скрипт загружен!");
