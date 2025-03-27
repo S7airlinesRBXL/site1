@@ -1,5 +1,3 @@
-const { specialUsers } = require("./specialUsers");
-
 const users = [
     { username: "MG", password: "MakarG" },
     { username: "GS", password: "GeorgijS" },
