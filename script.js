@@ -15,8 +15,20 @@ const specialUsers = [
     { username: "files", password: "files", redirect: "files.html" }
 ];
 
+// Функция для проверки соединения с интернетом
+function checkInternetConnection() {
+    return navigator.onLine;
+}
+
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault();
+
+    // Проверяем соединение с интернетом
+    if (!checkInternetConnection()) {
+        document.getElementById('message').textContent = "Сети нет! Проверьте подключение к интернету.";
+        document.getElementById('message').style.color = "red";
+        return;
+    }
 
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
@@ -40,6 +52,17 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         document.getElementById('message').textContent = "Неверное имя пользователя или пароль";
         document.getElementById('message').style.color = "red";
     }
+});
+
+// Можно также добавить обработчики для отслеживания изменения состояния сети
+window.addEventListener('online', () => {
+    console.log("Соединение восстановлено");
+});
+
+window.addEventListener('offline', () => {
+    console.log("Соединение потеряно");
+    document.getElementById('message').textContent = "Сети нет! Проверьте подключение к интернету.";
+    document.getElementById('message').style.color = "red";
 });
 
 console.log("Скрипт загружен!"); // Просто для проверки
