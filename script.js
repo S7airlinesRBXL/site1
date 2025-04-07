@@ -4,6 +4,7 @@ const users = [
     { username: "user2", password: "password2" }
 ];
 
+// Специальные пользователи (без export, так как это не модуль)
 const specialUsers = [
     { username: "superadmin", password: "superpassword", redirect: "special.html" },
     { username: "old", password: "old", redirect: "olds link.html" },
@@ -14,47 +15,8 @@ const specialUsers = [
     { username: "files", password: "files", redirect: "files.html" }
 ];
 
-// Функция для проверки и отображения статуса сети
-function updateNetworkStatus() {
-    const statusElement = document.getElementById('network-status');
-    if (!statusElement) return;
-    
-    if (navigator.onLine) {
-        statusElement.textContent = "Сеть доступна";
-        statusElement.style.color = "green";
-    } else {
-        statusElement.textContent = "Сети нет! Проверьте подключение к интернету.";
-        statusElement.style.color = "red";
-    }
-}
-
-// Добавляем элемент для отображения статуса сети
-function addNetworkStatusElement() {
-    const statusElement = document.createElement('div');
-    statusElement.id = 'network-status';
-    statusElement.style.margin = '10px 0';
-    document.body.insertBefore(statusElement, document.body.firstChild);
-    updateNetworkStatus();
-}
-
-// Проверка соединения каждую секунду
-function startNetworkMonitoring() {
-    addNetworkStatusElement();
-    setInterval(updateNetworkStatus, 1000); // Обновляем каждую секунду
-    
-    // Также отслеживаем события изменения состояния сети
-    window.addEventListener('online', updateNetworkStatus);
-    window.addEventListener('offline', updateNetworkStatus);
-}
-
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault();
-
-    if (!navigator.onLine) {
-        document.getElementById('message').textContent = "Сети нет! Проверьте подключение к интернету.";
-        document.getElementById('message').style.color = "red";
-        return;
-    }
 
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
@@ -80,7 +42,4 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     }
 });
 
-// Запускаем мониторинг сети при загрузке страницы
-window.addEventListener('DOMContentLoaded', startNetworkMonitoring);
-
-console.log("Скрипт загружен!");
+console.log("Скрипт загружен!"); // Просто для проверки
