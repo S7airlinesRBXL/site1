@@ -4,7 +4,6 @@ const users = [
     { username: "user2", password: "password2" }
 ];
 
-// Специальные пользователи (без export, так как это не модуль)
 const specialUsers = [
     { username: "superadmin", password: "superpassword", redirect: "special.html" },
     { username: "old", password: "old", redirect: "olds link.html" },
@@ -15,16 +14,43 @@ const specialUsers = [
     { username: "files", password: "files", redirect: "files.html" }
 ];
 
-// Функция для проверки соединения с интернетом
-function checkInternetConnection() {
-    return navigator.onLine;
+// Функция для проверки и отображения статуса сети
+function updateNetworkStatus() {
+    const statusElement = document.getElementById('network-status');
+    if (!statusElement) return;
+    
+    if (navigator.onLine) {
+        statusElement.textContent = "Сеть доступна";
+        statusElement.style.color = "green";
+    } else {
+        statusElement.textContent = "Сети нет! Проверьте подключение к интернету.";
+        statusElement.style.color = "red";
+    }
+}
+
+// Добавляем элемент для отображения статуса сети
+function addNetworkStatusElement() {
+    const statusElement = document.createElement('div');
+    statusElement.id = 'network-status';
+    statusElement.style.margin = '10px 0';
+    document.body.insertBefore(statusElement, document.body.firstChild);
+    updateNetworkStatus();
+}
+
+// Проверка соединения каждую секунду
+function startNetworkMonitoring() {
+    addNetworkStatusElement();
+    setInterval(updateNetworkStatus, 1000); // Обновляем каждую секунду
+    
+    // Также отслеживаем события изменения состояния сети
+    window.addEventListener('online', updateNetworkStatus);
+    window.addEventListener('offline', updateNetworkStatus);
 }
 
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    // Проверяем соединение с интернетом
-    if (!checkInternetConnection()) {
+    if (!navigator.onLine) {
         document.getElementById('message').textContent = "Сети нет! Проверьте подключение к интернету.";
         document.getElementById('message').style.color = "red";
         return;
@@ -54,15 +80,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     }
 });
 
-// Можно также добавить обработчики для отслеживания изменения состояния сети
-window.addEventListener('online', () => {
-    console.log("Соединение восстановлено");
-});
+// Запускаем мониторинг сети при загрузке страницы
+window.addEventListener('DOMContentLoaded', startNetworkMonitoring);
 
-window.addEventListener('offline', () => {
-    console.log("Соединение потеряно");
-    document.getElementById('message').textContent = "Сети нет! Проверьте подключение к интернету.";
-    document.getElementById('message').style.color = "red";
-});
-
-console.log("Скрипт загружен!"); // Просто для проверки
+console.log("Скрипт загружен!");
