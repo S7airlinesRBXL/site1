@@ -3,75 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Техническая поддержка</title>
+    <meta name="description" content="Служба технической поддержки. Свяжитесь с нами по телефону, email или через форму обратной связи.">
+    <title>Техническая поддержка | Помощь и консультации</title>
     <style>
+        :root {
+            --primary-color: #007BFF;
+            --primary-hover: #0056b3;
+            --text-color: #333;
+            --text-secondary: #555;
+            --bg-color: #f4f4f4;
+            --container-bg: #fff;
+        }
+        
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: var(--bg-color);
             margin: 0;
             padding: 0;
             background-image: url('background.jpg'); /* Путь к вашему фоновому изображению */
-            background-size: cover; /* Растягиваем изображение на весь экран */
-            background-position: center; /* Центрируем изображение */
-            background-repeat: no-repeat; /* Запрещаем повторение изображения */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: var(--text-color);
+            line-height: 1.6;
         }
+        
         .container {
             max-width: 800px;
             margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            padding: 30px;
+            background-color: var(--container-bg);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
+        
         h1 {
             text-align: center;
-            color: #333;
+            color: var(--text-color);
+            margin-bottom: 30px;
         }
+        
         .support-info {
             margin-top: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
         }
+        
         .support-info p {
             font-size: 16px;
-            color: #555;
-            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
         }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-method i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
         .support-info a {
-            color: #007BFF;
+            color: var(--primary-color);
             text-decoration: none;
+            transition: all 0.3s ease;
         }
+        
         .support-info a:hover {
             text-decoration: underline;
+            color: var(--primary-hover);
         }
+        
         .contact-form {
             margin-top: 30px;
         }
+        
         .contact-form label {
             display: block;
             margin-bottom: 8px;
             font-weight: bold;
-            color: #333;
+            color: var(--text-color);
         }
-        .contact-form input, .contact-form textarea {
+        
+        .contact-form input, 
+        .contact-form textarea {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             margin-bottom: 20px;
-            border: 1px solid #ccc;
+            border: 1px solid #ddd;
             border-radius: 4px;
             font-size: 16px;
+            transition: border 0.3s ease;
         }
+        
+        .contact-form input:focus, 
+        .contact-form textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+        }
+        
         .contact-form button {
-            background-color: #007BFF;
+            background-color: var(--primary-color);
             color: #fff;
-            padding: 10px 20px;
+            padding: 12px 25px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
+            transition: background-color 0.3s ease;
         }
+        
         .contact-form button:hover {
-            background-color: #0056b3;
+            background-color: var(--primary-hover);
+        }
+        
+        .form-container {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .working-hours {
+            margin-top: 20px;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px auto;
+                padding: 15px;
+            }
+            
+            body {
+                background-image: none;
+            }
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
 
@@ -80,11 +156,44 @@
     
     <div class="support-info">
         <p>Если у вас возникли вопросы или проблемы, пожалуйста, свяжитесь с нашей службой поддержки. Мы готовы помочь вам!</p>
-        <p>Вы можете связаться с нами по телефону: <a href="tel:+79142894588">+7 (914) 289 45-88</a></p>
-        <p>Или напишите нам на email: <a href="mailto:helps7rblx@gmail.com">helps7rblx@gmail.com</a></p>
+        
+        <div class="contact-method">
+            <i class="fas fa-phone-alt"></i>
+            <p>Телефон: <a href="tel:+79142894588">+7 (914) 289 45-88</a></p>
+        </div>
+        
+        <div class="contact-method">
+            <i class="fas fa-envelope"></i>
+            <p>Email: <a href="mailto:helps7rblx@gmail.com">helps7rblx<span style="display:none">-no-spam</span>@gmail.com</a></p>
+        </div>
+        
+        <div class="working-hours">
+            <p>Часы работы: Пн-Пт с 15:00 до 4:00 (МСК)</p>
+        </div>
     </div>
 
-    <script src="https://forms.yandex.ru/_static/embed.js"></script><iframe src="https://forms.yandex.ru/u/67f3a40702848f00e431c926/?iframe=1" frameborder="0" name="ya-form-67f3a40702848f00e431c926" width="650"></iframe>
+    <div class="form-container">
+        <h2>Форма обратной связи</h2>
+        <script src="https://forms.yandex.ru/_static/embed.js"></script>
+        <iframe src="https://forms.yandex.ru/u/67f3a40702848f00e431c926/?iframe=1" 
+                frameborder="0" 
+                name="ya-form-67f3a40702848f00e431c926" 
+                width="100%" 
+                height="500"
+                style="border-radius: 4px;"></iframe>
+    </div>
+    
+    <div class="faq" style="margin-top: 30px;">
+        <h2>Частые вопросы</h2>
+        <details>
+            <summary>Какие вопросы можно задавать в поддержку?</summary>
+            <p>Вы можете задавать любые вопросы, связанные с нашей продукцией или услугами. Постарайтесь описать проблему максимально подробно.</p>
+        </details>
+        <details>
+            <summary>Сколько времени занимает ответ?</summary>
+            <p>Мы стараемся отвечать в течение 1 рабочего дня, но в пиковые периоды ответ может занять до 2-3 дней.</p>
+        </details>
+    </div>
 </div>
 
 </body>
