@@ -4,32 +4,166 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>С Днём Рождения!</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #ff6f61;
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .box {
+            background-color: white;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .box.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        /* Стили для сообщения о недоступности */
+        #not-available {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #not-available .container {
+            max-width: 600px;
+            padding: 40px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #not-available h1 {
+            color: #ff6f61;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        #not-available p {
+            font-size: 1.2em;
+        }
+
+        #birthday-date {
+            font-weight: bold;
+            color: #ff6f61;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>С Днём Рождения, Макар!</h1>
-    </header>
+    <div id="birthday-content">
+        <header>
+            <h1>С Днём Рождения, Макар!</h1>
+        </header>
 
-    <section class="content">
-        <div class="box">
-            <h2>🎉 Поздравляем! 🎉</h2>
-            <p>Пусть этот день будет наполнен радостью, улыбками и приятными сюрпризами!</p>
-        </div>
-        <div class="box">
-            <h2>🎁 Желаем тебе: 🎁</h2>
-            <p>Здоровья, счастья, успехов во всех начинаниях и исполнения всех твоих желаний!</p>
-        </div>
-        <div class="box">
-            <h2>🎂 Торт и подарки 🎂</h2>
-            <p>Не забудь про торт и подарки, ведь это твой день!</p>
-        </div>
-    </section>
+        <section class="content">
+            <div class="box">
+                <h2>🎉 Поздравляем! 🎉</h2>
+                <p>Пусть этот день будет наполнен радостью, улыбками и приятными сюрпризами!</p>
+            </div>
+            <div class="box">
+                <h2>🎁 Желаем тебе: 🎁</h2>
+                <p>Здоровья, счастья, успехов во всех начинаниях и исполнения всех твоих желаний!</p>
+            </div>
+            <div class="box">
+                <h2>🎂 Торт и подарки 🎂</h2>
+                <p>Не забудь про торт и подарки, ведь это твой день!</p>
+            </div>
+        </section>
 
-    <footer>
-        <p>С любовью, твои друзья ❤️</p>
-    </footer>
+        <footer>
+            <p>С любовью, твои друзья ❤️</p>
+        </footer>
+    </div>
 
-    <script src="script.js"></script>
+    <div id="not-available" style="display: none;">
+        <div class="container">
+            <h1>Сайт заблокирован</h1>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Установите здесь дату рождения Макара (месяц 0-11)
+            const BIRTH_DAY = 17;    // День рождения (измените на нужный)
+            const BIRTH_MONTH = 6;   // Август (месяцы 0-11, измените на нужный)
+            
+            const today = new Date();
+            const currentDay = today.getDate();
+            const currentMonth = today.getMonth();
+            
+            const birthdayContent = document.getElementById('birthday-content');
+            const notAvailable = document.getElementById('not-available');
+            const birthdayDateElement = document.getElementById('birthday-date');
+            
+            // Проверяем, сегодня ли день рождения
+            if (currentDay === BIRTH_DAY && currentMonth === BIRTH_MONTH) {
+                // Показываем поздравление
+                birthdayContent.style.display = 'block';
+                notAvailable.style.display = 'none';
+                
+                // Анимация появления блоков
+                const boxes = document.querySelectorAll(".box");
+                const checkBoxes = () => {
+                    const triggerBottom = window.innerHeight / 5 * 4;
+                    boxes.forEach(box => {
+                        const boxTop = box.getBoundingClientRect().top;
+                        if (boxTop < triggerBottom) {
+                            box.classList.add("visible");
+                        } else {
+                            box.classList.remove("visible");
+                        }
+                    });
+                };
+                window.addEventListener("scroll", checkBoxes);
+                checkBoxes();
+            } else {
+                // Скрываем поздравление и показываем сообщение
+                birthdayContent.style.display = 'none';
+                notAvailable.style.display = 'block';
+                
+                // Форматируем дату дня рождения
+                const monthNames = ["января", "февраля", "марта", "апреля", "мая", "июня",
+                                  "июля", "августа", "сентября", "октября", "ноября", "декабря"];
+                birthdayDateElement.textContent = `${BIRTH_DAY} ${monthNames[BIRTH_MONTH]}`;
+            }
+        });
+    </script>
 </body>
 </html>
