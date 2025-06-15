@@ -25,14 +25,25 @@ body::before {
 }
 */
 
+/* Добавьте это в ваш файл styles.css */
+.privacy-link {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 12px;
+    color: #555;
+}
+
 .login-container {
-    background-color: rgba(255, 255, 255, 0.9); /* Белый цвет с небольшой прозрачностью */
+    position: relative; /* Добавьте это, чтобы позиционирование privacy-link работало правильно */
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
     text-align: center;
-    z-index: 1; /* Помещаем контейнер над затемнением */
+    z-index: 1;
+    margin: 20px; /* Добавьте отступ, чтобы ссылка не прилипала к краю экрана */
 }
 
 h2 {
